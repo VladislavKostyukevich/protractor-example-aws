@@ -1,0 +1,80 @@
+{
+    "extends": "eslint:recommended",
+
+    "globals": {
+        "__debugApi__": true,
+        "page": true
+    },
+
+    "rules": {
+        // Code style
+        "arrow-parens": "warn",
+        "array-bracket-spacing": "error",
+        "brace-style": "error",
+        "camelcase": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "curly": ["error", "all"],
+        "dot-location": ["error", "property"],
+        "dot-notation": "error",
+        "eol-last": "error",
+        "func-call-spacing": "error",
+        "indent": ["error", 4, {"SwitchCase": 1}],
+        "key-spacing": "error",
+        "keyword-spacing": "error",
+        "lines-around-directive": "error",
+        "no-duplicate-imports": "error",
+        "no-empty": ["error", {"allowEmptyCatch": true}],
+        "no-mixed-spaces-and-tabs": "error",
+        "no-multi-spaces": "error",
+        "no-multiple-empty-lines": ["error", {"max": 1}],
+        "no-throw-literal": "error",
+        "no-trailing-spaces": "error",
+        "no-useless-escape": "error",
+        "no-return-await": "error",
+        "one-var": ["error", "never"],
+        "object-curly-spacing": ["error", "always"],
+        "object-shorthand": "error",
+        "padded-blocks": ["error", "never"],
+        "quote-props": ["error", "consistent"],
+        "quotes": ["error", "single"],
+        "semi": "error",
+        "space-before-blocks": "error",
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never"}],
+        "space-in-parens": "error",
+        "space-infix-ops": "error",
+        "space-unary-ops": "error",
+        "spaced-comment": "error",
+        "yoda": ["error", "never", {"onlyEquality": true}],
+        "arrow-spacing": [2, { "before": true, "after": true }],
+
+        // Possible mistakes
+        "eqeqeq": "error",
+        "no-extra-bind": "error",
+        "no-implicit-coercion": ["error", {"boolean": false, "string": false, "number": true}],
+        "no-labels": "error",
+        "no-self-compare": "error",
+        "no-sequences": "error",
+        "no-unneeded-ternary": "error",
+        "no-unused-expressions": ["error", { "allowTernary": true }],
+        "no-unused-vars": ["error", {"vars": "all", "args": "none"}],
+        "no-with": "error",
+        "radix": ["error", "always"],
+        "console": 0
+    },
+
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true,
+        "mocha": true
+    }
+}

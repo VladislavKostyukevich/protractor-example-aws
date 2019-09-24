@@ -1,0 +1,33 @@
+{
+  "name": "automation-example",
+  "version": "2.0.0",
+  "description": "Example of tests protractor",
+  "main": "start.js",
+  "scripts": {
+    "start": "node protractor.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^3.3.13",
+    "agent-js-jasmine": "^3.0.0",
+    "chai": "^4.2.0",
+    "csv-writer": "^1.2.0",
+    "jasmine-reporters": "^2.3.2",
+    "moment": "^2.24.0",
+    "mysql2": "^1.5.1",
+    "protractor": "^5.4.2",
+    "protractor-flake": "^4.0.0",
+    "replace": "^1.0.1",
+    "sprintf-js": "^1.1.2",
+    "webdriverjs-retry": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "jasmine-spec-reporter": "^4.2.1"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
