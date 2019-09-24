@@ -3,6 +3,7 @@ const settings = require('./settings');
 const suiteSetting = require('./suiteSettings');
 
 exports.config = {
+    seleniumAddress: 'http://localhost:4444/wd/hub',
     framework: 'jasmine',
     multiCapabilities: [
         {
