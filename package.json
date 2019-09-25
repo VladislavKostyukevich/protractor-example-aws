@@ -4,7 +4,7 @@
   "description": "Example of tests protractor",
   "main": "start.js",
   "scripts": {
-    "start": "node protractor.conf.js"
+    "test": "node node_modules/protractor/bin/protractor protractor.conf.js"
   },
   "keywords": [],
   "author": "",
