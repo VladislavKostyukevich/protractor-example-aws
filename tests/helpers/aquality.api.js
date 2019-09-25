@@ -65,6 +65,10 @@ class AqualityAPI {
         return this._sendPost('/testrun', undefined, testRun);
     };
 
+    _getTestRuns(testRun) {
+        return this._sendGet('/testrun', testRun);
+    };
+
     _getSuites(testSuite) {
         return this._sendGet('/suite', testSuite);
     };
@@ -96,6 +100,15 @@ class AqualityAPI {
         } else {
             return this._createSuite(suite)
         }
+    }
+
+    getTestRun(testrun) {
+        const testruns = this._getTestRuns(testrun);
+        if(testruns && testruns.length > 0){
+            return testruns[0]
+        }
+
+        throw new Error(`This test run does not exist!`)
     }
 
     createOrUpdateTestRun(testrun) {

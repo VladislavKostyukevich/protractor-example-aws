@@ -17,7 +17,7 @@ class AqualityReporter {
     if (this.config.testrun_id) {
       this.existingTestRun = true;
       this.testrun.id = this.config.testrun_id
-      this.testrun = this.aqalityAPI.createOrUpdateTestRun(this.testrun)
+      this.testrun = this.aqalityAPI.getTestRun({ id: this.testrun.id, project_id: this.config.project_id })
       this.suite = { id: this.testrun.test_suite_id }
     }
   }
