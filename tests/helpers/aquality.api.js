@@ -103,7 +103,7 @@ class AqualityAPI {
     }
 
     createOrUpdateTest(test) {
-        const tests = this._getTests(test);
+        const tests = this._getTests({name: test.name, project_id: test.project_id});
         if (tests.length > 0) {
             const oldtest = tests[0];
             if (oldtest.suites && oldtest.suites.length > 0) {

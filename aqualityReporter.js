@@ -17,12 +17,14 @@ class AqualityReporter {
     if (this.config.testrun_id) {
       this.existingTestRun = true;
       this.testrun.id = this.config.testrun_id
+      this.testrun = this.aqalityAPI.createOrUpdateTestRun(this.testrun)
+      this.suite = { id: this.testrun.test_suite_id }
     }
   }
 
   jasmineStarted() {
-    this.suite = this.aqalityAPI.createOrUpdateSuite({ name: this.config.suite_name, project_id: this.config.project_id });
     if (!this.existingTestRun) {
+      this.suite = this.aqalityAPI.createOrUpdateSuite({ name: this.config.suite_name, project_id: this.config.project_id });
       this.testrun.test_suite_id = this.suite.id;
       this.testrun.start_time = new Date()
       this.testrun = this.aqalityAPI.createOrUpdateTestRun(this.testrun)
