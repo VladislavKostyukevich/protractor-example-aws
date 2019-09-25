@@ -17,10 +17,12 @@
     "jasmine-reporters": "^2.3.2",
     "moment": "^2.24.0",
     "mysql2": "^1.5.1",
-    "protractor": "^5.4.2",
+    "protractor": "6.0.0",
     "protractor-flake": "^4.0.0",
     "replace": "^1.0.1",
     "sprintf-js": "^1.1.2",
+    "superagent": "^5.1.0",
+    "sync-request": "^6.1.0",
     "webdriverjs-retry": "^0.2.0"
   },
   "devDependencies": {
