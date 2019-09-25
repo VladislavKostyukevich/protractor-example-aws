@@ -39,10 +39,11 @@ exports.config = {
         await browser.driver.manage().window().maximize();
         var AqualityReporter = require('./aqualityReporter');
         jasmine.getEnv().addReporter(new AqualityReporter({ 
-            suiteName: 'All Tests',
-            execution_environment: 'chrome aws',
+            suite_name: browser.params.suite_name,
+            testrun_id: browser.params.testrun_id,
+            execution_environment: browser.params.execution_environment,
             token: '13a3be61-fc6c-49a2-a424-2b53863dc0531569331863981',
-            apiURL: 'http://ec2-13-58-66-65.us-east-2.compute.amazonaws.com:8888/api',
+            api_url: 'http://ec2-13-58-66-65.us-east-2.compute.amazonaws.com:8888/api',
             project_id: 2 
         }));
     },
