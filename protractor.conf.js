@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const settings = require('./settings');
 const suiteSetting = require('./suiteSettings');
+const AqualityReporter = require('@aquality-automation/aquality-tracking-reporter-jasmine');
 
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -25,6 +26,9 @@ exports.config = {
             },
         },
     ],
+    localSeleniumStandaloneOpts: {
+        loopback: true
+    },
     suites: [
         suiteSetting.suite,
     ],
@@ -37,17 +41,16 @@ exports.config = {
     onPrepare: async () => {
         await browser.waitForAngularEnabled(false);
         await browser.driver.manage().window().maximize();
-        var AqualityReporter = require('./aqualityReporter');
-        jasmine.getEnv().addReporter(new AqualityReporter({ 
-            suite_name: browser.params.suite_name,
-            testrun_id: browser.params.testrun_id,
-            execution_environment: browser.params.execution_environment,
-            token: '13a3be61-fc6c-49a2-a424-2b53863dc0531569331863981',
-            api_url: 'http://ec2-13-58-66-65.us-east-2.compute.amazonaws.com:8888/api',
-            project_id: 2 
-        }));
+        const aqualityReporter = new AqualityReporter({
+            token: browser.params.token,
+            api_url: 'http://46.243.183.199:8888/api',
+            project_id: 2,
+            testrun_id: browser.params.testrun_id
+        })
+        jasmine.getEnv().addReporter(aqualityReporter);
     },
     afterEach: async () => {
+        await browser.driver.close();
         await browser.driver.close();
     },
 };
