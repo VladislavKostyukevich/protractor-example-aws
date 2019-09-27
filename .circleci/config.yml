@@ -11,7 +11,10 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - run curl --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"arguments":"-- --params.testrun_id=2 --params.token=\"b7e837ba-a1b7-4bce-a92b-44976c7544561569573601172\""}' \
-          https://1pcknb3954.execute-api.us-east-2.amazonaws.com/default/ExecuteTests
+      - run:
+          name: run tests
+          command:  |
+            curl --header "Content-Type: application/json" \
+            --request POST \
+            --data '{"arguments":"-- --params.testrun_id=2 --params.token=\"b7e837ba-a1b7-4bce-a92b-44976c7544561569573601172\""}' \
+            https://1pcknb3954.execute-api.us-east-2.amazonaws.com/default/ExecuteTests
