@@ -9,13 +9,13 @@ exports.config = {
     multiCapabilities: [
         {
             'shardTestFiles': true,
+            'enableVNC':true,
             'browserName': settings.browser,
             'moz:firefoxOptions': {
                 args: ['--headless'],
             },
             'goog:chromeOptions': {
                 args: [
-                    '--headless',
                     '--disable-gpu',
                     '--no-sandbox',
                     '--disable-extensions',
