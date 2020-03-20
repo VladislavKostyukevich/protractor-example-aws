@@ -8,7 +8,7 @@ node {
                 userRemoteConfigs: [[url: 'https://github.com/VladislavKostyukevich/protractor-example-aws.git']]
         ])
     }
-    stage("Getting list of spec files"){
+    stage("Run tests"){
         def files = findFiles(glob: 'tests/scenarios/uiTests/smoke/spec*.js')
         for(File file : files){
             String request = "curl --header \"Content-Type:application/json\" " +
