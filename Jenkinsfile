@@ -9,7 +9,7 @@ node {
         ])
     }
     stage("Getting list of spec files"){
-        def files = findFiles(glob: 'spec*.js')
+        def files = findFiles(glob: 'tests/scenarios/uiTests/smoke/spec*.js')
         for(File file : files){
             echo file.getAbsoluteFile()
         }
