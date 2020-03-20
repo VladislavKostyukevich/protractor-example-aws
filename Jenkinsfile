@@ -8,6 +8,12 @@ node {
                 userRemoteConfigs: [[url: 'https://github.com/VladislavKostyukevich/protractor-example-aws.git']]
         ])
     }
+    stage("Getting list of spec files"){
+        def files = findFiles(glob: 'spec*.js')
+        for(File file : files){
+            echo file.getAbsoluteFile()
+        }
+    }
     stage('Run Tests') {
         script {
 
