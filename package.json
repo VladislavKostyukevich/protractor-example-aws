@@ -15,7 +15,7 @@
     "agent-js-jasmine": "^3.0.0",
     "chai": "^4.2.0",
     "csv-writer": "^1.2.0",
-    "jasmine-reporters": "^2.3.2",
+    "jasmine-reporters": "^2.5.0",
     "moment": "^2.24.0",
     "mysql2": "^1.5.1",
     "protractor": "6.0.0",
